@@ -1,8 +1,8 @@
 import classes from "./Cart.module.css";
 
-const Cart =()=>{
+const Cart =(props)=>{
     return(
-        <button className={classes.button}>
+        <button onClick={props.onCart} className={classes.button}>
             Cart
             <span>1</span>
         </button>
