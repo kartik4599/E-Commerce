@@ -1,38 +1,33 @@
+import { useContext } from "react";
+import CartContext from "../../Context/cart-context";
 import Modal from "../UI/Modal";
 import classes from "./CartPage.module.css";
 import CartPageItem from "./CartPageItem";
 const CartPage = (props) => {
-  const cartElements = [
-    {
-      title: "Colors",
-      price: 100,
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-      quantity: 2,
-    },
-    {
-      title: "Black and white Colors",
-      price: 50,
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-      quantity: 3,
-    },
-    {
-      title: "Yellow and Black Colors",
-      price: 70,
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-      quantity: 1,
-    },
-  ];
+  const cxt = useContext(CartContext);
 
-  const List = cartElements.map((element) => {
+  const orderHandler = () => {
+    if (cxt.items.length > 0) {
+      alert("Thank You For Ordering");
+    } else {
+      alert("You have not selected the album");
+    }
+  };
+
+  const removingItem = (id) => {
+    cxt.removeItem(id);
+  };
+
+  const List = cxt.items.map((element) => {
     return (
       <CartPageItem
-        title={element.title}
+        key={element.id}
+        id={element.id}
+        title={element.album}
         price={element.price}
-        src={element.imageUrl}
-        quantity={element.quantity}
+        src={element.src}
+        quantity="1"
+        remove={removingItem.bind(null, element.id)}
       />
     );
   });
@@ -47,6 +42,13 @@ const CartPage = (props) => {
           <span>Quantity</span>
         </div>
         {List}
+      </div>
+      <div className={classes.order}>
+        <div>
+          <span>Total Amount - </span>
+          <span>{`$${cxt.totalAmount}`}</span>
+        </div>
+        <button onClick={orderHandler}>Order</button>
       </div>
     </Modal>
   );
