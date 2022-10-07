@@ -9,9 +9,9 @@ const Header = (props) => {
     <>
       <header className={classes.header}>
         <div className={classes['header-item']}>
-        <span><NavLink to='./home'> HOME</NavLink></span>
-          <NavLink to='./store'> <span>STORE</span></NavLink>
-          <NavLink to='./about'><span>ABOUT</span></NavLink>
+          <NavLink to='./home' activeClassName={classes.active} > <span>HOME</span></NavLink>
+          <NavLink to='./store' activeClassName={classes.active}> <span>STORE</span></NavLink>
+          <NavLink to='./about' activeClassName={classes.active}><span>ABOUT</span></NavLink>
           <Cart onCart={props.onCart}/>
         </div>
       </header>
