@@ -4,10 +4,10 @@
   background: rgb(42, 223, 255);
   bottom: 0;
   width: 100%;
-  /* position: absolute; */
 }
 
 .footer-title {
+  text-align: center;
   color: white;
   font-size: 50px;
   padding: 0 auto;

@@ -1,18 +1,17 @@
+import { NavLink } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
-  const handler = () => {
-    console.log("working");
-  };
+  
 
   return (
     <>
       <header className={classes.header}>
         <div className={classes['header-item']}>
-          <span onClick={handler}>HOME</span>
-          <span>STORE</span>
-          <span>ABOUT</span>
+        <span><NavLink to='./home'> HOME</NavLink></span>
+          <NavLink to='./store'> <span>STORE</span></NavLink>
+          <NavLink to='./about'><span>ABOUT</span></NavLink>
           <Cart onCart={props.onCart}/>
         </div>
       </header>
