@@ -1,0 +1,53 @@
+.Detail {
+  padding: 10px 30px;
+  display: flex;
+}
+
+.Image {
+  overflow: hidden;
+  height: 350px;
+  float: left;
+  padding: 10px;
+}
+
+.Image img {
+  transition: transform 2s;
+  height: 350px;
+}
+
+.Image img:hover {
+  transform: scale(2);
+}
+
+.Price {
+  padding: 10px 50px;
+  text-align: left;
+}
+
+.Price label {
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.Price p {
+  font-size: 30px;
+  color: rgb(42, 223, 255);
+  font-family: "Times New Roman", Times, serif;
+}
+
+.Price button {
+  padding: 15px 50px;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  font-size: 20px;
+  background: rgb(42, 223, 255);
+}
+
+.Price p:hover {
+  color: red;
+}
+
+.Price button:hover {
+  background: red;
+}

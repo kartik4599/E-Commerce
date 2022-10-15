@@ -30,3 +30,16 @@
   font-family: "Times New Roman", Times, serif;
   font-size: 80px;
 }
+
+.header-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.header-item a:hover,
+.header-item a:active,
+.header-item a.active {
+  border-bottom: 2px solid rgb(42, 223, 255);
+  padding: 2px 0px;
+  border-radius: 5px;
+}
